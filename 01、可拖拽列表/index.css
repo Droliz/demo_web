@@ -1,0 +1,29 @@
+
+.list {
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    /* height: 400px; */
+    /* background-color: #bfa; */
+}
+
+.list-item {
+    font-size: 24px;
+    cursor: move;
+    width: 300px;
+    background: #EA6E59;
+    border-radius: 4px;
+    color: #FFF;
+    margin-bottom: 6px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    transition: all;
+}
+
+.list .moving {
+    background: transparent;
+    color: transparent;
+    border: 1px dashed #ccc;
+}

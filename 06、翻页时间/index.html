@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翻页时间</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="box" id="box_minute">
+            <div class="top child text" id="top">0</div>
+            <div class="flip child" id="flip">
+                <div class="flip_face child text" id="flip_face">0</div>
+                <div class="flip_back child text" id="flip_back">0</div>
+            </div>
+            <div class="bottom child text" id="bottom">0</div>
+        </div>
+    </div>
+
+    <script>
+        // 获取Dom
+        const box_minute = document.querySelector("#box_minute");
+        const Top = box_minute.querySelector("#top");
+        const flip = box_minute.querySelector("#flip");
+        const flipFace = flip.querySelector("#flip_face");
+        const flipBack = flip.querySelector("#flip_back");
+        const Bottom = box_minute.querySelector("#bottom");
+        let timer = null, timerTwo = null;
+
+        const OneCycle = (n, timer) => { // 一次翻页的周期
+            let num = 0;
+            flipFace.style.zIndex = 1;
+            flipBack.style.zIndex = 0;
+            flip.style.transform = "perspective(500px) rotateX(0deg)"; // rotateX(0deg) => rotateX(-180deg)
+            flipFace.innerHTML = n;
+            Bottom.innerHTML = n;
+
+            timer = setInterval(() => {
+                num++;
+                if (num > 50) {
+                    clearInterval(timer);
+                    return;
+                };
+
+                if (num === 1) {
+                    Top.innerHTML = (n + 1) === 60 ? 0 : (n + 1); // 60 和 0 在时间里，其实是一样的
+                    flipBack.innerHTML = (n + 1) === 60 ? 0 : (n + 1);
+                }
+
+                if (num <= 25) {
+                    flipFace.style.zIndex = 1;
+                    flipBack.style.zIndex = 0;
+                } else {
+                    flipFace.style.zIndex = 0;
+                    flipBack.style.zIndex = 1;
+                }
+                // console.log(num); // 1 ~ 50
+                flip.style.transform = `perspective(500px) rotateX(-${180 * num / 50}deg)`
+            }, 20); // 将一秒钟分成50份。
+        };
+
+        const cycle = () => {
+            timerTwo = setInterval(() => {
+                let num = new Date().getSeconds();
+                OneCycle(num, timer);
+            }, 1000);
+        };
+
+        cycle();
+
+        // 浏览器页面切换时，定时器setInterval抖动问题
+        document.onvisibilitychange = function () {
+            if (document.visibilityState === "visible") {
+                cycle();
+            } else {
+                clearInterval(timer);
+                clearInterval(timerTwo);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

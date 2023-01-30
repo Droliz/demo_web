@@ -1,0 +1,62 @@
+/* 字体样式 */
+@import url("./style.css");
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #0e141b;
+    color: #e0e6eb;
+    font-family: 'Jura';
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 8px;
+    overflow: hidden;
+}
+
+.column,
+.colon {
+    display: inline-block;
+    font-size: var(--num-height);
+    line-height: var(--num-height);
+    /* 顶部对齐 */
+    vertical-align: top; 
+}
+
+.column {
+    transition: 0.3s;
+}
+
+.colon {
+    transform: translateY(calc(50vh - 55px));
+}
+
+.colon::after {
+    content: ":";
+}
+
+.num {
+    opacity: 0.25;
+    transition: 0.5s;
+}
+
+/* 当前 */
+.num.visible {
+    color: #FFF;
+    opacity: 1;
+    text-shadow: 1px 1px 0 #2c6299;
+}
+/* 临近 */
+.num.near {
+    opacity: 0.35;
+}
+/* 远 */
+.num.far {
+    opacity: 0.15;
+}
+/* 更远 */
+.num.distant {
+    opacity: 0.1;
+}

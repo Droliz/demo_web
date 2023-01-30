@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #1d1c1c;
+    display: flex;
+}
+
+.text {
+    position: relative;
+    margin: auto;
+    color: #FFF;
+    font-size: 70px;
+    font-weight: bolder;
+    overflow: hidden;
+    padding: var(--padding);
+}
+
+.text::before {
+    content: var(--content);
+    position: absolute;
+    top: var(--padding);
+    left: var(--padding);
+    color: var(--color);
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 1px;
+    /* animation: animation 1s linear forwards; */
+}
+
+/* 涂抹动画 */
+@keyframes animation {
+    0% {
+        width: 0;
+        border-right: 5px solid var(--color);
+        /* 发光滤镜 */
+        filter: 
+            drop-shadow(3px 3px 8px var(--color))
+            drop-shadow(-3px -3px 8px var(--color));
+    }
+    100% {
+        width: 100%;
+        border-right: 5px solid var(--color);
+        /* 发光滤镜 */
+        filter: 
+            drop-shadow(3px 3px 8px var(--color))
+            drop-shadow(-3px -3px 8px var(--color));
+    }
+}
+
+.text:hover::before {
+    animation: animation 1s linear forwards;
+}

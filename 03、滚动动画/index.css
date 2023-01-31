@@ -1,0 +1,46 @@
+
+body{
+    overflow-x: hidden;
+    width: 80%;
+    margin: auto;
+}
+
+body:after {
+    content: ".";   
+    clear: both;
+    display: block;
+}
+
+div{
+    width: 32%;
+    height: 20vw;
+    background: #e3e4e5;
+    margin-right: 2%;
+    box-sizing: content-box;
+    margin-top: 1.6vw;
+    float: left;
+}
+
+div:nth-of-type(3n+3) {
+    margin-right: 0;
+}
+
+@keyframes f-up {
+    0% {
+        will-change: transform;/*优化动画卡顿1*/
+        opacity: 0; /*初始状态 透明度为0*/
+        transform: translateY(100px);/*初始状态 文档流下100px*/
+    }
+    100% {
+        opacity: 1; /*结尾状态 透明度为1*/
+        transform:translateY(0px);/*初始状态 恢复正常位置*/
+    }
+}
+
+/* 入场动画类 */
+.f-up{
+    animation-name: f-up; /*动画名称*/
+    animation-duration: 0.8s; /*动画持续时间*/
+    animation-iteration-count: 1; /*动画次数*/
+    animation-delay: 0s; /*延迟时间*/
+}

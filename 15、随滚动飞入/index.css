@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 80vw;
+    margin: auto;
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100px);
+}
+
+.main .box {
+    width: 100px;
+    height: 100px;
+    background: #e3e4e5;
+    margin: 0 20px;
+    transition: all 0.8s;
+}
+
+.main .base {
+    opacity: 0;
+    transition: 
+        opacity var(--time) cubic-bezier(0.16, 1, 0.3, 1),
+        transform var(--time) cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.main .left-base {
+    transform: translateX(-200px);
+}
+
+.main .left {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.main .top-base {
+    transform: translateY(-200px);
+}
+
+.main .top {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.main .bottom-base {
+    transform: translateY(200px);
+}
+
+.main .bottom {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.main .right-base {
+    transform: translateX(200px);
+}
+
+.main .right {
+    opacity: 1;
+    transform: translateX(0);
+}

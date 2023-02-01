@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑器窗口样式</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="editor-window">
+        <div class="header">
+            <div class="left">
+                <!-- 左箭头 -->
+                <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
+                    data-view-component="true" class="octicon octicon-chevron-left color-fg-muted">
+                    <path fill-rule="evenodd"
+                        d="M15.28 5.22a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 000 1.06l6.25 6.25a.75.75 0 101.06-1.06L9.56 12l5.72-5.72a.75.75 0 000-1.06z">
+                    </path>
+                </svg>
+                <!-- 右箭头 -->
+                <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
+                    data-view-component="true" class="octicon octicon-chevron-right color-fg-muted">
+                    <path fill-rule="evenodd"
+                        d="M8.72 18.78a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06L9.78 5.22a.75.75 0 00-1.06 1.06L14.44 12l-5.72 5.72a.75.75 0 000 1.06z">
+                    </path>
+                </svg>
+            </div>
+            <div class="center">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                    data-view-component="true" class="octicon octicon-lock color-fg-subtle">
+                    <path fill-rule="evenodd"
+                        d="M4 4v2h-.25A1.75 1.75 0 002 7.75v5.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-5.5A1.75 1.75 0 0012.25 6H12V4a4 4 0 10-8 0zm6.5 2V4a2.5 2.5 0 00-5 0v2h5zM12 7.5h.25a.25.25 0 01.25.25v5.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-5.5a.25.25 0 01.25-.25H12z">
+                    </path>
+                </svg>
+                <div class="overflow-hidden content check">
+                    mona-github-github-g59jpq2w5w7.github.dev
+                </div>
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                    data-view-component="true" class="octicon octicon-sync color-fg-subtle">
+                    <path fill-rule="evenodd"
+                        d="M8 2.5a5.487 5.487 0 00-4.131 1.869l1.204 1.204A.25.25 0 014.896 6H1.25A.25.25 0 011 5.75V2.104a.25.25 0 01.427-.177l1.38 1.38A7.001 7.001 0 0114.95 7.16a.75.75 0 11-1.49.178A5.501 5.501 0 008 2.5zM1.705 8.005a.75.75 0 01.834.656 5.501 5.501 0 009.592 2.97l-1.204-1.204a.25.25 0 01.177-.427h3.646a.25.25 0 01.25.25v3.646a.25.25 0 01-.427.177l-1.38-1.38A7.001 7.001 0 011.05 8.84a.75.75 0 01.656-.834z">
+                    </path>
+                </svg>
+            </div>
+            <div class="right">
+                <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
+                    data-view-component="true" class="octicon octicon-plus color-fg-muted">
+                    <path fill-rule="evenodd"
+                        d="M11.75 4.5a.75.75 0 01.75.75V11h5.75a.75.75 0 010 1.5H12.5v5.75a.75.75 0 01-1.5 0V12.5H5.25a.75.75 0 010-1.5H11V5.25a.75.75 0 01.75-.75z">
+                    </path>
+                </svg>
+            </div>
+        </div>
+        <div class="body">
+            <div class="menu">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24"
+                    data-view-component="true" class="octicon octicon-three-bars color-fg-muted">
+                    <path fill-rule="evenodd"
+                        d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+                    </path>
+                </svg>
+            </div>
+            <div class="contrition">
+                <div class="code">
+                    <ul class="tabs">
+                        <li class="check">index.html</li>
+                        <li class="color-fg-subtle">index.js</li>
+                        <li class="color-fg-subtle">package.json</li>
+                    </ul>
+                    <div class="scripts">
+                        <div class="lines">
+                            <div class="line color-fg-subtle">1</div>
+                            <div class="line color-fg-subtle">2</div>
+                            <div class="line color-fg-subtle">3</div>
+                            <div class="line color-fg-subtle">4</div>
+                            <div class="line color-fg-subtle">5</div>
+                            <div class="line color-fg-subtle">6</div>
+                            <div class="line color-fg-subtle">7</div>
+                            <div class="line color-fg-subtle">8</div>
+                            <div class="line color-fg-subtle">9</div>
+                            <div class="line color-fg-subtle">10</div>
+                            <div class="line color-fg-subtle">11</div>
+                            <div class="line color-fg-subtle">12</div>
+                        </div>
+                        <div class="script check">
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>position-absolute width-full color-bg-default<span class="pl-pds">"</span></span> <span class="pl-e">style</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-s1"><span class="pl-c1"><span class="pl-c1">bottom</span></span>: <span class="pl-c1">-4<span class="pl-k">rem</span></span>;</span><span class="pl-pds">"</span></span>&gt;</span></pre>
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">  &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>container-xl p-responsive<span class="pl-pds">"</span></span>&gt;</span></pre>
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>d-flex flex-justify-center flex-lg-justify-end color-bg-default<span class="pl-pds">"</span></span>&gt;</span></pre>
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">      &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>col-8 col-sm-7 col-md-6 col-lg-5 position-relative z-2 right-lg-n12 events-none<span class="pl-pds">"</span></span>&gt;</span></pre>
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">        &lt;<span class="pl-ent">picture</span>&gt;</span></pre>
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">          &lt;<span class="pl-ent">source</span> <span class="pl-e">srcset</span>=<span class="pl-s"><span class="pl-pds">"</span>astro-mona.webp<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>image/webp<span class="pl-pds">"</span></span>&gt;</span></pre>
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">          &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>astro-mona.svg<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>960<span class="pl-pds">"</span></span> <span class="pl-e">height</span>=<span class="pl-s"><span class="pl-pds">"</span>967<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>home-astro-mona width-full position-absolute bottom-0 height-auto<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Mona looking at GitHub activity across the globe<span class="pl-pds">"</span></span>&gt;</span></pre>
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">        &lt;/<span class="pl-ent">picture</span>&gt;</span></pre>
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">      &lt;/<span class="pl-ent">div</span>&gt;</span></pre>
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">    &lt;/<span class="pl-ent">div</span>&gt;</span></pre>
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">  &lt;/<span class="pl-ent">div</span>&gt;</span></pre>
+                            <pre
+                                class="f4"><span class="code-editor-line-mktg d-inline-block js-type-letters">&lt;/<span class="pl-ent">div</span>&gt;</span></pre>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="output color-fg-subtle">
+                    <ul class="tabs">
+                        <li class="tab check">Terminal</li>
+                        <li class="tab">Output</li>
+                        <li class="tab">Problems</li>
+                        <li class="tab">Debug Console</li>
+                    </ul>
+                    <div class="terminal" data-animate-delay="50">
+                        <div class="no-wrap js-type-row row-is-visible" style="transition-delay: 0ms;">
+                            [<span class="color-fg-subtle">09:43:36</span>]
+                            <span>Starting</span>
+                            '<span class="color-fg-accent">watch-extension:vscode-api-tests</span>'
+                            ...
+                        </div>
+                        <div class="no-wrap js-type-row row-is-visible" style="transition-delay: 50ms;">
+                            [<span class="color-fg-subtle">09:43:36</span>]
+                            <span>Finished</span>
+                            '<span class="color-fg-accent">clean-extension:typescript-language-features</span>'
+                            after
+                            <span class="color-fg-done">248 ms</span>
+                        </div>
+                        <div class="no-wrap js-type-row row-is-visible" style="transition-delay: 100ms;">
+                            [<span class="color-fg-subtle">09:43:36</span>]
+                            <span>Starting</span>
+                            '<span class="color-fg-accent">watch-extension:typescript-language-features</span>'
+                            ...
+                        </div>
+                        <div class="no-wrap js-type-row row-is-visible" style="transition-delay: 150ms;">
+                            [<span class="color-fg-subtle">09:43:36</span>]
+                            <span>Finished</span>
+                            '<span class="color-fg-accent">clean-extension:php-language-features</span>'
+                            after
+                            <span class="color-fg-done">384 ms</span>
+                        </div>
+                        <div class="no-wrap js-type-row row-is-visible" style="transition-delay: 200ms;">
+                            [<span class="color-fg-subtle">09:43:36</span>]
+                            <span>Starting</span>
+                            '<span class="color-fg-accent">watch-extension:php-language-features</span>'
+                            ...
+                        </div> 
+                        <div class="no-wrap js-type-row row-is-visible" style="transition-delay: 250ms;">
+                            [<span class="color-fg-subtle">09:43:40</span>]
+                            <span>Finished</span>
+                            '<span class="color-fg-accent">clean-extension:html-language-features-server</span>'
+                            after
+                            <span class="color-fg-done">4.66 s</span>
+                        </div>
+                        <div class="no-wrap js-type-row row-is-visible" style="transition-delay: 300ms;">
+                            [<span class="color-fg-subtle">09:43:40</span>]
+                            <span>Starting</span>
+                            '<span class="color-fg-accent">watch-extension:html-language-features-server</span>'
+                            ...
+                        </div>
+                        <div class="no-wrap js-type-row row-is-visible" style="transition-delay: 350ms;">
+                            [<span class="color-fg-subtle">09:43:43</span>]
+                            <span>Finished</span>
+                            '<span class="color-fg-accent">clean-client</span>'
+                            after
+                            <span class="color-fg-done">7.33 s</span>
+                        </div>
+                        <div class="no-wrap js-type-row row-is-visible" style="transition-delay: 400ms;">
+                            [<span class="color-fg-subtle">09:43:43</span>]
+                            <span>Starting</span>
+                            '<span class="color-fg-accent">watch-client</span>'
+                            ...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="img">
+                <div class="links check">
+
+                    <div>
+                        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                            data-view-component="true" class="octicon octicon-three-bars">
+                            <path fill-rule="evenodd"
+                                d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24"
+                            data-view-component="true" class="octicon octicon-mark-github">
+                            <path fill-rule="evenodd"
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                            data-view-component="true" class="octicon octicon-bell">
+                            <path
+                                d="M8 16a2 2 0 001.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 008 16z">
+                            </path>
+                            <path fill-rule="evenodd"
+                                d="M8 1.5A3.5 3.5 0 004.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.018.018 0 00-.003.01l.001.006c0 .002.002.004.004.006a.017.017 0 00.006.004l.007.001h10.964l.007-.001a.016.016 0 00.006-.004.016.016 0 00.004-.006l.001-.007a.017.017 0 00-.003-.01l-1.703-2.554a1.75 1.75 0 01-.294-.97V5A3.5 3.5 0 008 1.5zM3 5a5 5 0 0110 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.518 1.518 0 0113.482 13H2.518a1.518 1.518 0 01-1.263-2.36l1.703-2.554A.25.25 0 003 7.947V5z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="image">
+                    <img class="width-full height-auto d-block js-build-in-item build-in-scale-up build-in-animate"
+                        width="1238" height="1404" loading="lazy" decoding="async"
+                        alt="Planet earth with visualization of GitHub activity crossing the globe"
+                        src="./img/globe.jpg">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

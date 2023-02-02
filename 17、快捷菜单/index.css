@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(to top, #84a0f4, #c2e9fb);
+}
+
+.menu-box {
+    position: relative;
+}
+
+/* 按钮效果 */
+.menu-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #5c67ff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(92, 103, 255, .3);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: 
+        background-color .2s ease-in,
+        box-shadow .2s ease-in;
+}
+/* 按钮交互 */
+.menu-btn:hover {
+    background-color: #4854ff;
+    box-shadow: 0 0 0 8px rgba(92, 103, 255, .3);
+}
+/* 按钮图标 */
+.menu-btn .line-box {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform .3s ease-out;
+}
+/* 按钮图标（三横线） */
+.menu-btn .line-box .line {
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+}
+.menu-btn .line:first-child {
+    align-self: flex-start;
+    transform-origin: right;
+    transition: 
+        transform .3s ease-in-out,
+        width .3s ease-in-out;
+}
+.menu-btn .line:last-child {
+    align-self: flex-end;
+    transform-origin: left;
+    transition: 
+        transform .3s ease-in-out,
+        width .3s ease-in-out;
+}
+
+/* 菜单 */
+.menu-list {
+    width: 140px;
+    height: 160px;
+    background-color: #fff;
+    border-radius: 8px;
+    list-style: none;
+    padding: 6px;
+    box-shadow: 0 0 4px 4px rgba(92, 103, 255, .15);
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+
+    opacity: 0;
+    transform: scale(0);
+    /* 变换基点 */
+    transform-origin: bottom right;
+    transition-delay: .1s;
+    transition: 
+        opacity .3s ease-in,
+        transform .3s ease-in;
+}
+/* 菜单项 */
+.menu-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #1c3991;
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: .2s ease-in;
+}
+/* 文字 */
+.menu-list li:hover {
+    color: #5c67ff;
+}
+
+/* 下划线 */
+.menu-list li::before {
+    content: "";
+    width: calc(100% - 24px);
+    height: 1px;
+    background-color: rgba(92, 103, 255, .1);
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+}
+/* 最后一项不需要 */
+.menu-list li:last-child:before {
+    display: none;
+}
+/* 图标样式 */
+.menu-list .fa {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 文字样式 */
+.menu-list span {
+    font-style: 14px;
+    margin-left: 12px;
+}
+
+/* 按钮变化 */
+.active .line-box {
+    transform: rotate(-45deg);
+}
+.active .line-box .line:first-child {
+    width: 50%;
+    transform: 
+        rotate(-90deg)
+        translateX(1px);
+}
+.active .line-box .line:last-child {
+    width: 50%;
+    transform: 
+        rotate(-90deg)
+        translateX(-1px);
+}
+
+/* 菜单变化 */
+.active .menu-list {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.active .menu-list li {
+    animation: fade-in-item .4s linear .3s forwards;
+}
+
+
+/* 动画 */
+@keyframes fade-in-item {
+    40% {
+        transform: translateX(-4px);
+        opacity: .6;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

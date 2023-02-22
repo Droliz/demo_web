@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+:root {
+    --size-cd: 300px;  
+    --show-lines: 5;   /* 显示歌词行数 */
+    --lyric-line-height: 30px;   /* 单行歌词高度 */
+    --controller-height: 50px;  /* 控制栏高度 */ 
+    --icon-size: 32px;  /* 图标尺寸 */
+}
+
+body {
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    z-index: -20;
+    /* 虚化 */
+    filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius=100, MakeShadow=false);
+    filter: blur(60px);
+    transform: scale(1.2);
+    transition: 
+        background-image 0.5s ease-in-out;
+}
+
+.audio {
+    width: 80%;
+    min-height: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    /* background-color: red; */
+}
+
+.audio .song {
+    display: flex;
+    min-width: var(--size-cd);
+    justify-content: center;
+}
+
+.song .temp {
+    width: var(--size-cd);
+    height: var(--size-cd);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 1s ease-in-out;
+}
+
+.song .temp-active {
+    width: calc(var(--size-cd) * 1.5);
+}
+
+.song .temp .cover {
+    width: var(--size-cd);
+    height: var(--size-cd);
+    /* margin: 0 auto; */
+    background-image: url('');
+    background-size: cover;
+    position: absolute;
+    z-index: 20;
+    transition: 
+        background-image 0.5s ease-in-out;
+    box-shadow:
+    0px 0px 2.2px rgba(0, 0, 0, 0.133),
+    0px 0px 39.2px rgba(0, 0, 0, 0.197),
+    0px 0px 118px rgba(0, 0, 0, 0.33);
+    left: 0;
+}
+
+.cover-active {
+    /* 播放时 */
+    box-shadow:
+        2.1px 0px 2.3px -30px rgba(0, 0, 0, -0.004),
+        4.1px 0px 5px -30px rgba(0, 0, 0, -0.002),
+        6.2px 0px 8.2px -30px rgba(0, 0, 0, 0.01),
+        8.3px 0px 11.9px -30px rgba(0, 0, 0, 0.033),
+        10.5px 0px 16.4px -30px rgba(0, 0, 0, 0.073),
+        12.8px 0px 22px -30px rgba(0, 0, 0, 0.14),
+        15.2px 0px 29.2px -30px rgba(0, 0, 0, 0.261),
+        17.9px 0px 39.4px -30px rgba(0, 0, 0, 0.533),
+        22px 0px 64px -30px rgba(0, 0, 0, 1);
+}
+
+.song .temp .cd {
+    width: calc(0.98 * var(--size-cd));
+    height: calc(0.98 * var(--size-cd));
+    border: 4px solid rgba(0, 0, 0, .6);
+    border-radius: 50%;
+    background-image: url('');
+    background-size: cover;
+    mask: radial-gradient(transparent 10%,  #000 10%);    /* 镂空 */
+    -webkit-mask: radial-gradient(transparent 10%,  #000 10%);    
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    transition: 
+        rotate 1s ease-in-out,
+        background-image 0.5s ease-in-out;
+}
+
+.cd-active {
+    /* 播放时 */
+    animation: rotate-cd 30s linear infinite;
+}
+
+.song .temp .cd .center {
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    /* background-color:rgba(220, 220, 220); */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.song .temp .cd .center #t1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0  , .5);
+}
+
+.song .temp .cd .center #t2 {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    border: 3px solid rgba(16, 16, 20, .3);
+}
+
+
+/* 旋转动画 */
+@keyframes rotate-cd {
+    0% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+/* 歌词 */
+.lyric {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.lyric ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255, 255, 255, .8);
+    height: calc(var(--lyric-line-height) * var(--show-lines));
+    /* transform: translateY(-24px); */
+    transition: transform 0.5s linear;
+}
+.lyric ul li {
+    height: var(--lyric-line-height);
+    line-height: var(--lyric-line-height);
+}
+/* 歌词选中 */
+.active {
+    color:rgb(54, 127, 196);
+    font-weight: bold;
+}
+
+/* 控制器 */
+.controller {
+    width: 100%;
+    height: var(--controller-height);
+    margin-top: 30px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.controller .icon {
+    position: absolute;
+    transition: opacity .5s linear;
+    cursor: pointer;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    z-index: 50;
+}
+
+.controller[theme="light"] .icon path {
+    fill: #1a1a1a;
+}
+
+.controller .model .icon,
+.controller .play-pause .icon{
+    opacity: 0;
+}
+
+.controller .model,
+.controller .left,
+.controller .right,
+.controller .play-pause {
+    min-width: 32px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 音乐图标被选中 */
+.controller .active-icon {
+    opacity: 1 !important;
+    z-index: 100;  /* 图标置顶，防止点击不到 */
+}
+
+/* 进度条 */
+#s-area, #seek-bar{
+    width: 150px;
+    position: relative;
+    height: 5px;
+    border-radius: 4px;
+}
+
+#s-area{
+    background-color:#e8f5ff;
+    cursor: pointer;
+    /* margin: 20px auto 10px; */
+}
+
+#ins-time{
+    position: absolute;
+    top: -29px;
+    color: #fff;
+    font-size: 12px;
+    white-space: pre;
+    padding: 5px 6px;
+    border-radius: 4px;
+	display: none;
+    transition: display .2s ease-in-out;
+}
+
+#s-hover{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.2;
+    z-index: 2;
+    width: 0;
+    transition: width .2s ease-in-out;
+}
+
+#s-hover{
+    background-color: #4b4d5c;
+}
+
+#seek-bar{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: rgb(54, 127, 196);
+    transition: 0.2s ease width;
+}

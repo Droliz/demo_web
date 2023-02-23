@@ -1,0 +1,45 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn span {
+    color: #fff;
+}
+
+.octicon {
+    color: #fff;
+    transition: transform .2s;
+}
+
+.octicon-chevrow-stem {
+    /* fill: #fff; */
+    stroke-dasharray: 10;
+    stroke-dashoffset: 10;
+    transition: stroke-dashoffset .2s;
+}
+
+.btn:hover .octicon-chevrow-stem {
+    stroke-dashoffset: 20;
+}
+
+.btn:hover svg {
+    transform: translateX(4px);
+}

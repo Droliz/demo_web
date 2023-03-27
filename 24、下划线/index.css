@@ -1,0 +1,20 @@
+.title {
+    line-height: 2;
+    color: #333;
+}
+
+.title span {
+    /* 渐变背景 */
+    background: 
+        linear-gradient(to right, #f00, #0f0) no-repeat right bottom;
+    /* 背景高度 */
+    background-size: 0 2px;
+    will-change: background-size, background-position-x;
+    transition: background-size 800ms;
+}
+
+.title span:hover {
+    background-position-x: left;
+    /* 背景宽度 */
+    background-size: 100% 2px;
+}

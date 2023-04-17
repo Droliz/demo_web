@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    /* background-color: #f5f5f5; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 字体 */
+    font-family: sans-serif;
+    /* 字间距 */
+    letter-spacing: 2px;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+
+/* 整个login是遮罩层 */
+.login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(72, 178, 198);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* 登录框 */
+.login .login-box {
+    width: 200px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.login .login-box .login-footer .submit {
+    width: 100px;
+    height: 30px;
+}
+
+
+.chat-main {
+    background-color: #f5f5f5;
+
+    width: 1000px;
+    height: 600px;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+}
+
+/* 工具栏 */
+.chat-tools {
+    min-width: 50px;
+    height: 100%;
+    padding-top: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.chat-tools .tools-item {
+    width: 32px;
+    height: 32px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.tools-item img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 联系人列表 */
+.chat-main .chat-list {
+    /* background-color: aquamarine; */
+    padding-top: 20px;
+    min-width: 250px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.chat-list .list {
+    /* background-color: aquamarine; */
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* 单个联系人样式 */
+.chat-list .list .list-item {
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    position: relative;
+    /* background-color: aquamarine; */
+}
+
+.list-item img {
+    width: 45px;
+    height: 45px;
+}
+
+.list-item span {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.chat-list .list .list-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* 被选中 */
+.active {
+    background-color: #f5f5f5;
+}
+
+/* 聊天框 */
+.chat-main .chat-window {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 聊天框头部 */
+.chat-window .window-header {
+    min-height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.window-header span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+/* 聊天内容 */
+.chat-window .window-body {
+    flex-grow: 2;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.window-body .content li {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.window-body .content li img {
+    width: 32px;
+    height: 32px;
+}
+
+.window-body .content li .message {
+    /* height: 100px; */
+    max-width: calc(100% - 120px);
+    background-color: #1a1a;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* 输入框 */
+.chat-window .input {
+    /* flex-grow: 1; */
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+    padding: 10px;
+    align-items: flex-end;
+}
+
+.chat-window .input .in{
+    /* flex-grow: 1; */
+    width: 100%;
+    height: calc(100% - 30px);
+    overflow-y: auto;
+}
+
+
+[contenteditable]:active{
+    outline: none;
+}
+[contenteditable]:focus{
+    outline: none;
+}
+
+.chat-window .input .btn {
+    min-width: 60px;
+    height: 30px;
+    color: #fff;
+    background-color: #1a1a;
+    border: none;
+    cursor: pointer;
+}
+
+
+.right {
+    /* 对齐方式 */
+    justify-content: end;
+}
+
+/* 未读消息 */
+.unread {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #f00;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-window .mask {
+    /* 填充 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.chat-window .mask  .mask-box {
+    color: #333;
+    font-size: 24px;
+}
+

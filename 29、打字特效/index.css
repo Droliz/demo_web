@@ -1,0 +1,62 @@
+:root {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+
+.title {
+    position: relative;
+    color: #fff;
+    font-size: 63px;
+    /* 字间距 */
+    letter-spacing: 3px;
+    /* 单字宽度 */
+    width: 65px;
+    white-space: nowrap;
+    overflow: hidden;
+    /* 自定义属性，用于控制字数 */
+    --count: 6;
+    animation: typing 1.8s steps(var(--count)) forwards;
+    /* 倒影 */
+    --webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.title::after {
+    content: '';
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: calc(var(--count) * 65px);
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
